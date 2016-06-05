@@ -1,0 +1,14 @@
+FROM centos
+
+MAINTAINER Giuseppe Maxia <gmax@cpan.org>
+
+#RUN yum update -y \
+#    && yum install -y libaio perl perl-Data-Peek
+RUN yum install -y libaio perl 
+    
+
+EXPOSE 3306
+# CMD /opt/mysql/install.sh
+#CMD ["mysqld"]
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

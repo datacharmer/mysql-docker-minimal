@@ -1,0 +1,11 @@
+FROM busybox
+
+MAINTAINER Giuseppe Maxia <gmax@cpan.org>
+
+RUN mkdir -p /opt/mysql/__VERSION__
+COPY dbdata/__VERSION__ /opt/mysql/__VERSION__
+COPY dbdata/__VERSION__/install.sh /opt/mysql
+
+COPY README.md /home/msandbox/README
+
+CMD "chdir /opt/mysql"
