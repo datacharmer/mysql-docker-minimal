@@ -33,11 +33,12 @@ do
     fi
     chmod +x dbdata/$VERSION/install.sh
     cp dot_my_cnf dbdata/$VERSION
-    IMAGE=datacharmer/mysql-minimal:$SHORT_VERSION
+    IMAGE=datacharmer/mysql-minimal-$SHORT_VERSION
     docker build  -t $IMAGE .
     if [ "$?" != "0" ]
     then
         exit 1
     fi
     rm -rf dbdata/$VERSION
+    rm Dockerfile
 done

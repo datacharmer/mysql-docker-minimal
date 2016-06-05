@@ -23,7 +23,7 @@ To deploy an image, you need two steps.
 
 With the first, you deploy the tarball **as a volume**
 
-    $ docker create --name my_bin -v /opt/mysql  datacharmer/mysql-minimal:5.7
+    $ docker create --name my_bin -v /opt/mysql  datacharmer/mysql-minimal-5.7
 
 The path `/opt/mysql` contains the reduced tarball. It is deployed as a public volume, and the container is not running.
 
