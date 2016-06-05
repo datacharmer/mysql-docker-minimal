@@ -4,7 +4,7 @@ MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
 #RUN yum update -y \
 #    && yum install -y libaio perl perl-Data-Peek
-RUN yum install -y libaio perl 
+RUN yum install -y libaio perl perl-Data-Peek
     
 
 EXPOSE 3306
