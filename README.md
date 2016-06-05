@@ -63,4 +63,10 @@ If you want to use MySQL on Docker, you can either try the "official" image (pro
 
 Using a combination of these images, instead, you can decide which version you want, and which Linux flavor it will run into. 
 
+## Why not Percona Server or MariaDB Server?
+
+I am only including MySQL tarballs in this repository, for two good reasons:
+
+* Percona Server tarballs require their own customized Linux host. While MySQL binaries run anywhere (because they are compiled statically) Percona creates different tarballs for different sets of libraries. This fact defies the purpose of having a reduced sets of Linux images that can run any version of MySQL. If there is an universal tarball for Percona Server, I would like to know.
+* MariaDB 10.x has a different structure from MySQL and Percona servers. While I have one simple procedure to reduce the size of both MySQL and Percona servers, I would need to create a separate one for MariaDB. I haven't had the time to do it. If someone wants to contribute a set of reduced binaries, I will consider the inclusinon. The reduced binaries should be able to pass all the tests in MySQL-Sandbox to be included in this repository.
 
