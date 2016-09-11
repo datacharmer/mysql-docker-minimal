@@ -5,13 +5,14 @@ The images created by this software aim at deploying a MySQL server from several
 There are several images **datacharmer/mysql-minimal** with version 5.0, 5.1, 5.5, 5.6, and 5.7.
 Each image contains the latest tarball (or a very recent one) for the corresponding version.
 
-As of its first release (June 2016) we have:
+As of its first release (June-September 2016) we have:
 
 * 5.0.96
 * 5.1.72
-* 5.5.50
-* 5.6.31
-* 5.7.13
+* 5.5.52
+* 5.6.33
+* 5.7.15
+* 8.0.00
 
 The reduced tarballs are a cherrypick of tarballs distributed by MySQL, with only the files strictly needed to run a server, and the debug information stripped out. (See [distro-resize](https://github.com/datacharmer/mysql-docker-sandbox/tree/master/distro-resize) for more info.)
 
@@ -37,7 +38,6 @@ Each one of these images has initialization code that can install a server from 
 
     $ docker run -ti --volumes-from my_bin --name mybox datacharmer/my-ubuntu bash
     .
-    root@46e020b51741:/# mysql
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 3
     Server version: 5.7.13 MySQL Community Server (GPL)

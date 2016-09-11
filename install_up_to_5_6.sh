@@ -53,3 +53,4 @@ echo ''
 
 echo 'export PATH=/usr/local/mysql/bin:$PATH' > /etc/profile.d/mysql.sh
 cp $EXECDIR/dot_my_cnf $HOME/.my.cnf
+/usr/local/mysql/bin/mysql
