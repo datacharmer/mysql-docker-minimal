@@ -3,7 +3,7 @@
 VERSIONS="$@"
 if [ -z "$VERSIONS" ]
 then
-    VERSIONS=' 5.0.96 5.1.72 5.5.50 5.6.32 5.7.14 8.0.0'
+    VERSIONS=' 5.0.96 5.1.72 5.5.52 5.6.33 5.7.15 8.0.0'
 fi
 for VERSION in $VERSIONS
 do
