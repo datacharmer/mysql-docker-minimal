@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
 RUN apt-get update \
-    && apt-get install -y make sudo libaio1 vim-tiny perl-modules \
+    && apt-get install -y make sudo libaio1 vim-tiny perl-modules libnuma1 \
     && rm -rf /var/lib/apt/lists/* 
 
 EXPOSE 3306

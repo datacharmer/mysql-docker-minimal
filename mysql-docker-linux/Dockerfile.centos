@@ -4,7 +4,7 @@ MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
 #RUN yum update -y \
 #    && yum install -y libaio perl perl-Data-Peek
-RUN yum install -y libaio perl perl-Data-Peek
+RUN yum install -y libaio perl perl-Data-Peek numactl-libs which
     
 
 EXPOSE 3306

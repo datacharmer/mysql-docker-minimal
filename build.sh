@@ -23,7 +23,7 @@ do
         exit 1
     fi
     perl -pe "s/__VERSION__/$VERSION/g" Dockerfile.template > Dockerfile
-    if [ "$SHORT_VERSION" == "5.7" -o "$SHORT_VERSION" == "ps5.7" ]
+    if [ "$SHORT_VERSION" == "5.7" -o "$SHORT_VERSION" == "ps5.7" -o "$SHORT_VERSION" == "8.0" ]
     then
         perl -pe "s/__VERSION__/$VERSION/g" install_5_7.sh > dbdata/$VERSION/install.sh
         cp grants_5_7.sql dbdata/$VERSION/grants.sql
