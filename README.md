@@ -2,10 +2,10 @@
 
 The images created by this software aim at deploying a MySQL server from several versions using a combination of two containers.
 
-There are several images **datacharmer/mysql-minimal** with version 5.0, 5.1, 5.5, 5.6, and 5.7.
+There are several images **datacharmer/mysql-minimal** with version 5.0, 5.1, 5.5, 5.6, 5.7, and 8.0.
 Each image contains the latest tarball (or a very recent one) for the corresponding version.
 
-As of its first release (June-September 2016) we have:
+As of its first releases (June-September 2016) we have:
 
 * 5.0.96
 * 5.1.72
@@ -34,13 +34,13 @@ The second step is using the linux distribution of your choice. You may use any 
 * `datacharmer/my-debian`
 * `datacharmer/my-centos`
 
-Each one of these images has initialization code that can install a server from something found on /opt/mysql. For this to happen, you need to use the colume that was created in the previous step.
+Each one of these images has initialization code that can install a server from something found on /opt/mysql. For this to happen, you need to use the volume that was created in the previous step.
 
     $ docker run -ti --volumes-from my_bin --name mybox datacharmer/my-ubuntu bash
-    .
+    ..
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 3
-    Server version: 5.7.13 MySQL Community Server (GPL)
+    Server version: 5.7.15 MySQL Community Server (GPL)
 
     Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
 
