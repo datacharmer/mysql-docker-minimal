@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd $(dirname $0)
 FLAVORS=$1
 
 if [ -z "$FLAVORS" ]
