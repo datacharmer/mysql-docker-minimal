@@ -3,18 +3,18 @@
 VERSIONS="$@"
 if [ -z "$VERSIONS" ]
 then
-    VERSIONS=' 5.0.96 5.1.72 5.5.52 5.6.33 5.7.21 8.0.4'
+    VERSIONS=' 4.1.22 5.0.96 5.1.72 5.5.61 5.6.41 5.7.24 8.0.13'
 fi
 for VERSION in $VERSIONS
 do
     SHORT_VERSION=$(echo $VERSION | perl -pe 's/\.\d+$//')
-    if [ -f dbdata/${VERSION}.tar.gz ]
+    if [ -f dbdata/${VERSION}.tar.xz ]
     then
         cd dbdata
-        tar -xzf ${VERSION}.tar.gz 
+        tar -xzf ${VERSION}.tar.xz 
         cd -
     else
-        echo "File dbdata/$VERSION.tar.gz not found"
+        echo "File dbdata/$VERSION.tar.xz not found"
         exit 1
     fi
     if [ ! -d dbdata/${VERSION} ]

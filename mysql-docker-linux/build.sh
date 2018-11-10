@@ -4,7 +4,7 @@ FLAVORS=$1
 
 if [ -z "$FLAVORS" ]
 then
-    FLAVORS='ubuntu debian centos'
+    FLAVORS='ubuntu ubuntu-new debian centos'
 fi
 
 for FLAVOR in $FLAVORS
