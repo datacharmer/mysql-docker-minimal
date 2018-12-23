@@ -5,19 +5,11 @@ useradd -g mysql mysql
 
 EXECDIR=/opt/mysql/__VERSION__
 
+echo "Installing MySQL __VERSION__ ..."
 cd /usr/local
 ln -s $EXECDIR $PWD/mysql
 cd mysql
 
-#if [ -d ./data ]
-#then
-#    rm -rf data
-#fi
-#mkdir data
-#if [ -d /var/lib/mysql ]
-#then
-#    mv /var/lib/mysql /var/lib/${$}_mysql
-#fi
 DATADIR=/var/lib/mysql
 
 ./scripts/mysql_install_db --no-defaults --basedir=$PWD --datadir=$DATADIR > out 2>&1
@@ -29,8 +21,6 @@ then
 fi
 
 chown -R mysql.mysql $DATADIR
-
-#ln -s $PWD/data /var/lib/mysql
 
 ./bin/mysqld_safe --basedir=$PWD --datadir=$DATADIR --user=mysql --log-error=/var/log/mysqld.log > /dev/null 2>&1 & 
 
@@ -51,6 +41,10 @@ done
 echo ''
 ./bin/mysql < $EXECDIR/grants.sql
 
+export LD_LIBRARY_PATH=/usr/local/mysql/lib:/usr/lib:/usr/lib64:/lib:/lib64:$EXECDIR/lib
 echo 'export PATH=/usr/local/mysql/bin:$PATH' > /etc/profile.d/mysql.sh
 cp $EXECDIR/dot_my_cnf $HOME/.my.cnf
-/usr/local/mysql/bin/mysql
+if [ -z "$SKIP_CLIENT" ]
+then
+    /usr/local/mysql/bin/mysql
+fi

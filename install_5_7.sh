@@ -5,20 +5,13 @@ useradd -g mysql mysql
 
 EXECDIR=/opt/mysql/__VERSION__
 
+echo "Installing MySQL __VERSION__ ..."
 cd /usr/local
 ln -s $EXECDIR $PWD/mysql
 cd mysql
 
-#if [ -d ./data ]
-#then
-#    rm -rf data
-#fi
-#mkdir data
-#if [ -d /var/lib/mysql ]
-#then
-#    mv /var/lib/mysql /var/lib/${$}_mysql
-#fi
 DATADIR=/var/lib/mysql
+export LD_LIBRARY_PATH=/usr/local/mysql/lib:/usr/lib:/usr/lib64:/lib:/lib64:$EXECDIR/lib
 ./bin/mysqld --no-defaults --initialize-insecure --basedir=$PWD --datadir=$DATADIR > out 2>&1
 
 if [ "$?" != "0" ]
@@ -51,4 +44,7 @@ echo ''
 
 echo 'export PATH=/usr/local/mysql/bin:$PATH' > /etc/profile.d/mysql.sh
 cp $EXECDIR/dot_my_cnf $HOME/.my.cnf
-/usr/local/mysql/bin/mysql
+if [ -z "$SKIP_CLIENT" ]
+then
+    /usr/local/mysql/bin/mysql
+fi

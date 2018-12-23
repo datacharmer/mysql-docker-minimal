@@ -8,6 +8,8 @@ RUN apt-get update \
     && export USER=root \
     && export HOME=/root \
     && echo "source /etc/bash_completion" >> /root/.bashrc \
+    && echo "export LD_LIBRARY_PATH=/opt/mysql/current:/usr/local/mysql/lib:/usr/lib:/usr/lib64:/lib:/lib64" >> /root/.bashrc \
+    && echo "[ -f /opt/mysql/library_path.sh ] && source /opt/mysql/library_path.sh" >> /root/.bashrc \
     && ln -s /opt /root/opt
 
 EXPOSE 3306
