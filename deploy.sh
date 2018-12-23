@@ -7,7 +7,7 @@ function get_help
 {
     echo "Syntax : $0 flavor version"
     echo "  Where flavor is one of {ubuntu   debian   centos}"
-    echo "  And version is one of {5.0   5.1   5.5   5.6   5.7}"
+    echo "  And version is one of { 4.1   5.0   5.1   5.5   5.6   5.7   8.0}"
     exit 1
 }
 

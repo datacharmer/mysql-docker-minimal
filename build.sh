@@ -11,7 +11,7 @@ do
     if [ -f dbdata/${VERSION}.tar.xz ]
     then
         cd dbdata
-        tar -xzf ${VERSION}.tar.xz 
+        tar -xf ${VERSION}.tar.xz 
         cd -
     else
         echo "File dbdata/$VERSION.tar.xz not found"

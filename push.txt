@@ -1,0 +1,10 @@
+datacharmer/my-centos
+datacharmer/my-debian
+datacharmer/my-ubuntu
+datacharmer/mysql-minimal-4.1
+datacharmer/mysql-minimal-5.0
+datacharmer/mysql-minimal-5.1
+datacharmer/mysql-minimal-5.5
+datacharmer/mysql-minimal-5.6
+datacharmer/mysql-minimal-5.7
+datacharmer/mysql-minimal-8.0

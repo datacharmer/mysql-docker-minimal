@@ -3,11 +3,15 @@ FROM debian:jessie
 MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
 RUN apt-get update \
-    && apt-get install -y make sudo libaio1 vim-tiny perl-modules libnuma1 \
-    && rm -rf /var/lib/apt/lists/* 
+    && apt-get install -y make sudo libaio1 vim-tiny perl-modules libnuma1 bash-completion \
+    && rm -rf /var/lib/apt/lists/* \
+    && export USER=root \
+    && export HOME=/root \
+    && echo "source /etc/bash_completion" >> /root/.bashrc \
+    && ln -s /opt /root/opt
 
 EXPOSE 3306
-# CMD /opt/mysql/install.sh
-#CMD ["mysqld"]
+COPY dbdeployer /usr/bin/dbdeployer
+COPY dbdeployer_completion.sh /etc/bash_completion.d/
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
