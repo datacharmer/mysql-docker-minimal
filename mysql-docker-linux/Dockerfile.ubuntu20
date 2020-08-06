@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
 RUN apt-get update \
-    && apt-get install -y make sudo libaio1 vim-tiny libnuma1 bash-completion wget perl libkeyutils1 \
+    && apt-get install -y make sudo libaio1 vim-tiny libnuma1 bash-completion wget perl libkeyutils1 libncurses5 \
     && rm -rf /var/lib/apt/lists/* \
     && export USER=root \
     && export HOME=/root \
