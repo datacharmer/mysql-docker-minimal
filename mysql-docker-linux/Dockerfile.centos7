@@ -1,8 +1,8 @@
-FROM centos
+FROM centos:7
 
 MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
-RUN yum install -y libaio perl perl-Data-Peek numactl-libs which bash-completion \
+RUN yum install -y libaio numactl-libs perl which bash-completion \
     && export USER=root \
     && export HOME=/root \
     && echo "export LD_LIBRARY_PATH=/opt/mysql/current:/usr/local/mysql/lib:/usr/lib:/usr/lib64:/lib:/lib64" >> /root/.bashrc \

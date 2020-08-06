@@ -27,7 +27,7 @@ if [ "$?" != "0" ] ; then exit ; fi
 
 if [ -z "$FLAVORS" ]
 then
-    FLAVORS='ubuntu debian centos'
+    FLAVORS='ubuntu ubuntu20 debian centos7 centos8'
 fi
 
 for FLAVOR in $FLAVORS

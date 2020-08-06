@@ -1,13 +1,11 @@
-FROM ubuntu:18.04
+FROM centos:8
 
 MAINTAINER Giuseppe Maxia <gmax@cpan.org>
 
-RUN apt-get update \
-    && apt-get install -y make sudo libaio1 vim-tiny libnuma1 bash-completion wget perl libkeyutils1 \
-    && rm -rf /var/lib/apt/lists/* \
+RUN yum install -y libaio numactl-libs which bash-completion wget perl \
+    && dnf install -y ncurses-compat-libs \
     && export USER=root \
     && export HOME=/root \
-    && echo "source /etc/bash_completion" >> /root/.bashrc \
     && echo "export LD_LIBRARY_PATH=/opt/mysql/current:/usr/local/mysql/lib:/usr/lib:/usr/lib64:/lib:/lib64" >> /root/.bashrc \
     && echo "[ -f /opt/mysql/library_path.sh ] && source /opt/mysql/library_path.sh" >> /root/.bashrc \
     && ln -s /opt /root/opt
